@@ -18,6 +18,7 @@ app.use(express.json());
 
 //Set Security Headers
 app.use(helmet({ crossOriginResourcePolicy: false }));
+const config = require('./config.json');
 //Set Security Headers
 
 //Prevent XSS Attack
@@ -64,13 +65,13 @@ app.use((error, req, res, next) => {
     logger.error(error.message);
 });
 //create port
-const PORT = process.env.PORT || 9000;
+const PORT = config.server_port || 9000;
 //listen to portnpm
 app.listen(PORT, () => {
     console.log(
-        `SLAVE-API: Running in ${process.env.NODE_ENV} mode and listening on port http://:${PORT}`
+        `${config.agent_name}: Running in ${process.env.NODE_ENV} mode and listening on port http://:${PORT}`
     );
-    logger.debug(`SLAVE-API: Running in ${process.env.NODE_ENV} mode and listening on port http://:${PORT}`);
+    logger.debug(`${config.agent_name}: Running in ${process.env.NODE_ENV} mode and listening on port http://:${PORT}`);
 });
 // Handle unhandled promise rejections
 process.on("unhandledRejection", (err, promise) => {
