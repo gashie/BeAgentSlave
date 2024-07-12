@@ -53,7 +53,9 @@ pm2.connect(async(err) => {
             case 'logs':
               const logs = await getLogs(processName);
             //   ws.send(JSON.stringify({ logs }));
-              return sendResponse(res, 1, 200, `Process description`, logs);
+            const logFilePath = logs[0].pm2_env.pm_out_log_path;
+            res.sendFile(logFilePath);
+            //   return sendResponse(res, 1, 200, `Process description`, logs);
 
               break;
             default:
