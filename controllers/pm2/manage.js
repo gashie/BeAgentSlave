@@ -46,11 +46,15 @@ pm2.connect(async(err) => {
               break;
             case 'describe':
               const description = await describeProcess(processName);
-              ws.send(JSON.stringify({ description }));
+            //   ws.send(JSON.stringify({ description }));
+              return sendResponse(res, 1, 200, `Process description`, description);
+
               break;
             case 'logs':
               const logs = await getLogs(processName);
-              ws.send(JSON.stringify({ logs }));
+            //   ws.send(JSON.stringify({ logs }));
+              return sendResponse(res, 1, 200, `Process description`, logs);
+
               break;
             default:
                 res.status(400).json({ error: 'Invalid action' });

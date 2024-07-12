@@ -74,7 +74,7 @@ const describeProcess = (processName) => {
 
 const getLogs = (processName) => {
   return new Promise((resolve, reject) => {
-    pm2.logs(processName, (err, logs) => {
+    pm2.describe(processName, (err, logs) => {
       if (err) {
         reject(err);
       } else {
