@@ -44,7 +44,7 @@ app.use(function (req, res, next) {
 })
 
 //Mount routes
-app.use("/api/v1/slave", routes);
+app.use("/", routes);
 
 app.use(errorHandler);
 

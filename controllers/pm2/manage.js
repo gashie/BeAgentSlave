@@ -2,6 +2,7 @@ const pm2 = require('pm2');
 const asynHandler = require("../../middleware/async");
 const { sendResponse, CatchHistory } = require("../../helper/utilfunc");
 const { startProcess,listProcesses,stopProcess,getLogs,restartProcess,deleteProcess,describeProcess } = require('../../helper/pm2');
+const { getServerMetrics } = require('./metrics');
 const systemDate = new Date().toISOString().slice(0, 19).replace("T", " ");
 
 exports.ManagePm2 = asynHandler(async (req, res, next) => {
@@ -26,12 +27,11 @@ pm2.connect(async(err) => {
               await stopProcess(processName);
             //   ws.send(JSON.stringify({ message: `Stopped PM2 process: ${processName}` }));
               return sendResponse(res, 1, 200, `Stopped PM2 process: ${processName}`, []);
-
-              break;
             case 'list':
               const processes = await listProcesses();
             //   ws.send(JSON.stringify({ processes }));
-              return sendResponse(res, 1, 200, `Process list retrieved`, processes);
+            let metrics = await getServerMetrics()
+              return sendResponse(res, 1, 200, `Process list retrieved`, [{processes,metrics}]);
 
               break;
             case 'restart':
