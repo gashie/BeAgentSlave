@@ -1,0 +1,26 @@
+{
+  "service_token": "st_fleet_server_policy.00502b18-1a2f-4d3c-829e-285eaa19059c",
+  "agent_id": "82778efc-9af5-4897-b9ab-49f95689be09",
+  "agent_name": "Slave API",
+  "agent_description": "first agent_server_policy",
+  "deployment_mode": "quickstart",
+  "server_host": "CALC02GD2XXMD6N",
+  "server_port": "5050",
+  "server_ip": "10.130.154.20",
+  "policy_id": "36458e2a-7421-4cac-bca8-6083a25f40f7",
+  "CALBANKMQ": "amqp://calpay:calpay@192.168.0.137:5672/calpay",
+  "HOMEMQ": "amqp://localhost:5672",
+  "REDIS": "http://localhost:9008/api/v1/redis/",
+  "COMP": "http://localhost:9005/api/v1/comp/static",
+
+  "slave_config": {
+    "namespace": "default",
+    "database": {
+      "user": "admin",
+      "host": "localhost",
+      "password": "admin",
+      "port": 5432,
+      "dbName": "fleet_central"
+    }
+  }
+}

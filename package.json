@@ -1,0 +1,32 @@
+{
+  "name": "slave",
+  "version": "1.0.0",
+  "description": "Slave agent",
+  "main": "server.js",
+  "scripts": {
+    "slave": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gashie/BeAgentSlave.git"
+  },
+  "author": "Gashie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gashie/BeAgentSlave/issues"
+  },
+  "homepage": "https://github.com/gashie/BeAgentSlave#readme",
+  "dependencies": {
+    "diskusage": "^1.2.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "getmac": "^6.6.0",
+    "helmet": "^7.1.0",
+    "macaddress": "^0.5.3",
+    "os-utils": "^0.0.14",
+    "pm2": "^5.4.2",
+    "speedometer": "^1.1.0",
+    "xss-clean": "^0.1.4"
+  }
+}
