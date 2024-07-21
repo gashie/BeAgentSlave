@@ -1,6 +1,6 @@
 const os = require('os');
-const { formatMemorySize,formatBytes,formatDiskLatency,formatLoadAverages,formatUptime } = require('../../helper/autoformaters');
-const { getProcessInformation,getCpuUsage,getDiskUsage,getHostDetails,getHostIPAddress,getMacAddress,getMacAddresses,getNetworkUsage,getPrimaryInterface } = require('../../helper/autometrics');
+const { formatMemorySize,formatBytes,formatDiskLatency,formatLoadAverages,formatUptime } = require('./autoformaters');
+const { getProcessInformation,getCpuUsage,getDiskUsage,getHostDetails,getHostIPAddress,getMacAddress,getMacAddresses,getNetworkUsage,getPrimaryInterface } = require('./autometrics');
 
 async function getServerMetrics() {
     const proc = await getProcessInformation()

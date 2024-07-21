@@ -2,7 +2,7 @@ const pm2 = require('pm2');
 const asynHandler = require("../../middleware/async");
 const { sendResponse, CatchHistory } = require("../../helper/utilfunc");
 const { startProcess,listProcesses,stopProcess,getLogs,restartProcess,deleteProcess,describeProcess } = require('../../helper/pm2');
-const { getServerMetrics } = require('./metrics');
+const { getServerMetrics } = require('../../helper/metrics');
 const systemDate = new Date().toISOString().slice(0, 19).replace("T", " ");
 
 exports.ManagePm2 = asynHandler(async (req, res, next) => {
@@ -67,3 +67,21 @@ pm2.connect(async(err) => {
       }
 })
 })
+exports.MonitorPm2 = asynHandler(async (req, res, next) => {
+  // Initialize PM2
+  pm2.connect(async(err) => {
+      if (err) {
+        console.error(err);
+        process.exit(1);
+      }
+  
+      try {
+  
+        const processes = await listProcesses();
+          return sendResponse(res, 1, 200, `Process list retrieved`, processes);
+        } catch (error) {
+          console.error(error);
+          res.status(500).json({ error: 'Failed to perform PM2 action' });
+        }
+  })
+  })

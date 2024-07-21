@@ -3,7 +3,7 @@ const asyncHandler = require("../../middleware/async");
 const path = require("path")
 const fs = require("fs")
 const { sendResponse, CatchHistory } = require("../../helper/utilfunc");
-const { status } = require("../../helper/ctl");
+const { status, stop, start } = require("../../helper/ctl");
 
 
 
@@ -33,7 +33,30 @@ exports.MonitorServices = asyncHandler(async (req, res, next) => {
         next(error);
     }
 });
-
+exports.ManageServices = asyncHandler(async (req, res, next) => {
+    // Initialize PM2
+    const { action, processName } = req.body;
+    try {
+    
+    
+        switch (action) {
+            case 'stop':
+              await stop(processName)
+              return sendResponse(res, 1, 200, `Stopped Ctl process: ${processName}`, []);
+            case 'status':
+              const serviceStatus =   await status(processName)
+              return sendResponse(res, 1, 200, `Ctl status retrieved`, serviceStatus);
+            case 'start':
+              await start(processName);
+              return sendResponse(res, 1, 200, `Restarted Ctl process: ${processName}`, []);
+            default:
+                res.status(400).json({ error: 'Invalid action' });
+            }
+      } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Failed to perform PM2 action' });
+      }
+    })
 
 
 

@@ -1,0 +1,11 @@
+[
+ 
+    {
+        "id": 1,
+        "service": "firewalld"
+    },
+    {
+        "id": 2,
+        "service": "httpd"
+    }
+]

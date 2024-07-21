@@ -151,18 +151,18 @@ async function systemctl(...args) {
 }
 
 
-[
+// [
  
-    {
-        "id": 1,
-        "service": "firewalld"
-    },
-]
-async function asyncCall() {
-	console.log('calling');
-	const result = await status('firewalld');
-	console.log(result);
-	// Expected output: "resolved"
-  }
+//     {
+//         "id": 1,
+//         "service": "firewalld"
+//     },
+// ]
+// async function asyncCall() {
+// 	console.log('calling');
+// 	const result = await status('firewalld');
+// 	console.log(result);
+// 	// Expected output: "resolved"
+//   }
   
-  asyncCall();
+//   asyncCall();
