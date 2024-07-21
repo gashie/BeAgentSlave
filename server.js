@@ -5,8 +5,6 @@ const dotenv = require("dotenv");
 const errorHandler = require("./middleware/error");
 const { logger, morganMiddleware } = require("./logs/winston");
 const routes = require("./routes/setup");
-const path = require("path")
-const cookieParser = require('cookie-parser')
 //load env vars
 dotenv.config({ path: "./config/config.env" });
 //initialise express
@@ -28,7 +26,6 @@ if (process.env.NODE_ENV === "development") {
     app.use(morganMiddleware);
 
 }
-app.use(cookieParser())
 app.use(function (req, res, next) {
     res.removeHeader("x-powered-by");
     res.removeHeader("set-cookie");
