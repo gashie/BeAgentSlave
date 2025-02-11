@@ -3,4 +3,5 @@ config/config.env
 package-lock.json
 logs/rotate*
 Slave
+logs/.d*
 # *.json

@@ -10,12 +10,12 @@ const { fetchLogs, loadLogs } = require("../controllers/apache/manage");
 
 ///admin management
 router.route("/pm2").post(ManagePm2);
-router.route("/ctl").post(ManageServices);
-router.route("/ctlinfo").post(MonitorServices);
-router.route("/sysinfo").post(GetSysInfo);
-router.route("/ctlmonitor").post(MonitorServices);
-router.route("/sysinfomonitor").post(GetSysInfo);
-router.route("/pm2monitor").post(MonitorPm2);
-router.route('/logs').get(fetchLogs);
-router.route('/load').get(loadLogs);
+// router.route("/ctl").post(ManageServices);
+// router.route("/ctlinfo").post(MonitorServices);
+// router.route("/sysinfo").post(GetSysInfo);
+// router.route("/ctlmonitor").post(MonitorServices);
+// router.route("/sysinfomonitor").post(GetSysInfo);
+// router.route("/pm2monitor").post(MonitorPm2);
+// router.route('/logs').get(fetchLogs);
+// router.route('/load').get(loadLogs);
 module.exports = router;
