@@ -6,39 +6,24 @@
     "auditLog": "logs/.d07c3509fb1ce39d51f07c8a1bc84c1bfc93a515-audit.json",
     "files": [
         {
-            "date": 1720784367960,
-            "name": "logs/rotate-2024-07-12.log",
-            "hash": "088ec7cb8693a6b2f50761fbeca45b8334e18e1bce6ffb9e536de40cf7e3bd0e"
+            "date": 1738926044427,
+            "name": "logs\\rotate-2025-02-07.log",
+            "hash": "e40d5afc43577e2614e2e13214353a4fd0189d7f8ae563af3454398a56a080d5"
         },
         {
-            "date": 1721380106219,
-            "name": "logs/rotate-2024-07-19.log",
-            "hash": "2ccac158e26f68eb444b6db6d4220284bc627a6ff9add98be9779b4af19113ea"
+            "date": 1739022124425,
+            "name": "logs\\rotate-2025-02-08.log",
+            "hash": "bdbf14200b817260d4dac6b3e09df6917f2e27709c451f858819d8e4f1554601"
         },
         {
-            "date": 1721530134854,
-            "name": "logs/rotate-2024-07-21.log",
-            "hash": "24285469aabcdc58f1ed346e387446a61ae4ebf2af9fb16ac5f191d35c53bd17"
+            "date": 1739106496884,
+            "name": "logs\\rotate-2025-02-09.log",
+            "hash": "0f925449cdc2f9a0f9816fab8760fb4dc7a27fd07ba5e277f16bbd790f07e27c"
         },
         {
-            "date": 1721636414636,
-            "name": "logs/rotate-2024-07-22.log",
-            "hash": "46397ece079a64d06ea8f1c138aca00667eee70aaa6c740f8b0764e627a484a6"
-        },
-        {
-            "date": 1721720755266,
-            "name": "logs/rotate-2024-07-23.log",
-            "hash": "c9d9056359a5821132e5e489785a59d3ec791654ea02106bc56de3490bb82d2b"
-        },
-        {
-            "date": 1721788014083,
-            "name": "logs/rotate-2024-07-24.log",
-            "hash": "087d8f5e384e749a45717c362cc723e7f9e7ddb1b1ddc335070077cf465abe54"
-        },
-        {
-            "date": 1721903476342,
-            "name": "logs/rotate-2024-07-25.log",
-            "hash": "0ebe2f491cce729ddddbba6766f033043fd9fca947128fa103476d8e2956d2cb"
+            "date": 1739174810582,
+            "name": "logs\\rotate-2025-02-10.log",
+            "hash": "a9981a60bd4f3efb06953e862bc4db6baea979cdb4188f916e1e25f31eb3b5a9"
         }
     ],
     "hashType": "sha256"

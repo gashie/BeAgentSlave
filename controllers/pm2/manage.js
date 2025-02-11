@@ -19,7 +19,7 @@ pm2.connect(async(err) => {
 
         switch (action) {
             case 'start':
-              await startProcess(scriptPath, options);
+              await startProcess(processName);
             //   ws.send(JSON.stringify({ message: `Started PM2 process: ${processName}` }));
               return sendResponse(res, 1, 200, `Started PM2 process: ${processName}`, []);
               break;
@@ -30,8 +30,8 @@ pm2.connect(async(err) => {
             case 'list':
               const processes = await listProcesses();
             //   ws.send(JSON.stringify({ processes }));
-            let metrics = await getServerMetrics()
-              return sendResponse(res, 1, 200, `Process list retrieved`, [{processes,metrics}]);
+            // let metrics = await getServerMetrics()
+              return sendResponse(res, 1, 200, `Process list retrieved`, [{processes}]);
 
               break;
             case 'restart':
