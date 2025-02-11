@@ -2,7 +2,7 @@ const pm2 = require('pm2');
 const asynHandler = require("../../middleware/async");
 const { sendResponse, CatchHistory } = require("../../helper/utilfunc");
 const { startProcess,listProcesses,stopProcess,getLogs,restartProcess,deleteProcess,describeProcess } = require('../../helper/pm2');
-const { getServerMetrics } = require('../../helper/metrics');
+// const { getServerMetrics } = require('../../helper/metrics');
 const systemDate = new Date().toISOString().slice(0, 19).replace("T", " ");
 
 exports.ManagePm2 = asynHandler(async (req, res, next) => {
