@@ -1,10 +1,12 @@
 const express = require("express");
 const router = express.Router();
 
-const {  CreateAdmin,ViewAdmimnUsers,UpdateAdminUser, MonitorServices, ManageServices } = require("../controllers/systemctl/manage");
-const { ManagePm2, MonitorPm2 } = require("../controllers/pm2/manage");
-const { GetSysInfo } = require("../controllers/sysinfo/manage");
-const { fetchLogs, loadLogs } = require("../controllers/apache/manage");
+// const {  CreateAdmin,ViewAdmimnUsers,UpdateAdminUser, MonitorServices, ManageServices } = require("../controllers/systemctl/manage");
+const { ManagePm2 } = require("../controllers/pm2/manage");
+
+// const { ManagePm2, MonitorPm2 } = require("../controllers/pm2/manage");
+// const { GetSysInfo } = require("../controllers/sysinfo/manage");
+// const { fetchLogs, loadLogs } = require("../controllers/apache/manage");
 
 //routes
 
